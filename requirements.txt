@@ -1,24 +1,4 @@
-import pkg_resources
-
-installed_packages = {d.project_name: d.version for d in pkg_resources.working_set}
-
-required_packages = [
-    'pandas',
-    'scikit-learn',
-    'matplotlib',
-    'seaborn'
-]
-
-requirements_content = []
-for pkg in required_packages:
-    if pkg in installed_packages:
-        requirements_content.append(f"{pkg}=={installed_packages[pkg]}"
-                                   )
-    else:
-        requirements_content.append(f"{pkg}")
-
-with open('requirements.txt', 'w') as f:
-    for item in requirements_content:
-        f.write(f"{item}\n")
-
-print("requirements.txt created successfully.")  
+pandas==2.2.3
+scikit-learn==1.6.1
+matplotlib==3.10.0
+seaborn==0.13.2
